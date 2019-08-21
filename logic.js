@@ -45,12 +45,11 @@ const dragonCurveRecursive = function(order, length, sign, start, end) {
         let rootHalf = (1/2) ** (1/2);
         savePoint = end;
         dragonCurveRecursive(order -1, length * rootHalf, 1, savePoint, NEnd);
-        // savePoint = NEnd;
         console.log(end);
         end = rotate45(end[0], end[1], (sign* -90), NEnd);
-        console.log(end);
         savePoint = end;
-        dragonCurveRecursive(order - 1, length * rootHalf, -1, NEnd, end);
+        console.log(end);
+        dragonCurveRecursive(order - 1, length * rootHalf, -1, NEnd, savePoint);
     }
 }
 
